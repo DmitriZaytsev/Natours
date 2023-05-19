@@ -206,7 +206,7 @@
 
 1.  Clone this repository:
 
-        git clone https://github.com/DmitriZaitsev/Omnifood-AI.git
+        git clone https://github.com/DmitriZaytsev/NatureTrips.git
 
 2.  Install npm packages:
 
