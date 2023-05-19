@@ -8,6 +8,7 @@
 
 > Natours is a responsive site with advanced CSS Features, some of which replace Javascript!
 <br>
+  
 **Live site**: <https://nature-tour.netlify.app/>
 
 ### Used technologies
@@ -238,4 +239,4 @@ You can replace "npm" with the word "yarn", if you use it.
 
 Telegram: [@dmitr1_zaytsev](https://t.me/dmitr1_zaytsev)
 
-Mail: [dmitri_zaytsev@mail.ru](dmitri_zaytsev@bk.ru)
+Mail: <dmitri_zaytsev@bk.ru>
