@@ -1,18 +1,22 @@
-![logo](README.assets/preview.png)
+<p align="center">
+  
+<img src="README.assets/preview.png">
+  
+<p>
 
-## Natours
+# Natours
 
 > Natours is a responsive site with advanced CSS Features, some of which replace Javascript!
-
-**Live site**: <>
+<br>
+**Live site**: <https://nature-tour.netlify.app/>
 
 ### Used technologies
 
-- Sass
+- SASS
 - HTML5
-- npm scripts
 - PostCSS
 - BEM metodology
+- npm scripts
 - icon-fonts
 - Art direction & density switching and Density & resolution switching methods
 
@@ -31,7 +35,8 @@
   - [Realized Features](#realized-features)
 - [Setup](#quick-setup)
 - [Contacts](#contacts)
-
+<br>
+  
 ## Overview
 
 ### More about technologies
@@ -81,10 +86,15 @@
 | ![](README.assets/desktop-version.png) | ![](README.assets/mobile-version.png) |
 
 0 - 600px: Phone
+
 600 - 900px: Tablet portrait
+
 900 - 1200px: Tablet landscape
+
 [1200 - 1800] is where our normal styles apply
+
 1800px + : Big desktop
+<br>
 
 4.  Cross-browser support was achieved thanks to PostCSS and `@supports`.
 
@@ -125,6 +135,7 @@
 ![](README.assets/nav-main-features_1.gif)
 
 >Open/close navigation
+
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
@@ -135,6 +146,7 @@
     }
 
 >Filling links with color
+
     &__link {
         &:link,
         &:visited {
@@ -162,12 +174,14 @@
             transform: translateX(1rem);
         }
     }
+<br>
 
 2. Showing the back side of the cards. Opening and closing popup(when URL was changed).
 
 ![](README.assets/cards-popup-features.gif)
 
 >Perspetive property + created blocks for front and back side
+
     &:hover &__side--front {
         transform: rotateY(-180deg);
     }
