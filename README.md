@@ -221,7 +221,7 @@
 
 1.  Clone this repository:
 
-        git clone https://github.com/DmitriZaytsev/NatureTrips.git
+        git clone https://github.com/DmitriZaytsev/Natours.git
 
 2.  Install npm packages:
 
