@@ -16,9 +16,9 @@
 - SASS
 - HTML5
 - PostCSS
-- BEM metodology
-- npm scripts
 - icon-fonts
+- npm scripts
+- BEM metodology
 - Art direction & density switching and Density & resolution switching methods
 
 ### Structure
@@ -44,41 +44,45 @@
 
 1.  I used BEM(Block-Element-Modifier) metodology
 
-        <div class="header__text-box">
-          <h1 class="heading-primary">
-            <span class="heading-primary--main">Outdoors</span>
-            <span class="heading-primary--sub">is where life happens</span>
-          </h1>
+```html
+<div class="header__text-box">
+    <h1 class="heading-primary">
+        <span class="heading-primary--main">Outdoors</span>
+        <span class="heading-primary--sub">is where life happens</span>
+    </h1>
 
-          <a href="#section-tours" class="btn btn--white btn--animated"
-          >Discover our tours</a>
-        </div>
+    <a href="#section-tours" class="btn btn--white btn--animated"
+    >Discover our tours</a>
+</div>
+```
 
 2.  There were used different options of Sass: mixins, nesting, variables.
 
-        @mixin respond($breakpoint) {
-            @if $breakpoint == phone {
-                @media only screen and (max-width: 37.5em) { @content };     //600px
-            }
-            @if $breakpoint == tab-port {
-                @media only screen and (max-width: 56.25em) { @content };     //900px
-            }
-            @if $breakpoint == tab-land {
-                @media only screen and (max-width: 75em) { @content };    //1200px
-            }
-            @if $breakpoint == big-desktop {
-                @media only screen and (min-width: 112.5em) { @content };    //1800
-            }
-        }
+```css
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };     //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
 
-        &__logo-box {
-            text-align: center;
-            margin-bottom: 8rem;
+&__logo-box {
+text-align: center;
+margin-bottom: 8rem;
 
-            @include respond(tab-port) {
-            margin-bottom: 6rem;
-            }
-        }
+    @include respond(tab-port) {
+    margin-bottom: 6rem;
+    }
+}
+```
 
 3.  Created site for various devices.
 
@@ -99,34 +103,38 @@
 
 4.  Cross-browser support was achieved thanks to PostCSS and `@supports`.
 
-        @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            background-color: rgba($color-black, .3);
-        }
+```css
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+}
+```
 
 5.  For adding responsive images were used Art direction & density switching and Density & resolution switching methods.
 
-        <picture class="footer__logo">
-          <source
-            srcset="
-              img/logo-green-small-1x.png 1x,
-              img/logo-green-small-2x.png 2x
-            "
-            media="(max-width: 37.5em)" />
-          <img
-            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
-            alt="Full logo"
-            src="img/logo-green-2x.png" />
-        </picture>
+```html
+<picture class="footer__logo">
+    <source
+    srcset="
+    img/logo-green-small-1x.png 1x,
+    img/logo-green-small-2x.png 2x
+    "
+    media="(max-width: 37.5em)" />
+    <img
+    srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+    alt="Full logo"
+    src="img/logo-green-2x.png" />
+</picture>
 
 
-            <img
-                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 1"
-                class="composition__photo composition__photo--p1"
-                src="img/nat-1-large.jpg" />
+<img
+srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+alt="Photo 1"
+class="composition__photo composition__photo--p1"
+src="img/nat-1-large.jpg" />
+```
 
 
 ### Realized features
@@ -137,44 +145,48 @@
 
 >Open/close navigation
 
-    &__checkbox:checked ~ &__background {
-        transform: scale(80);
-    }
+```css
+&__checkbox:checked ~ &__background {
+transform: scale(80);
+}
 
-    &__checkbox:checked ~ &__nav {
-        opacity: 1;
-        width: 100%;
-    }
+&__checkbox:checked ~ &__nav {
+opacity: 1;
+width: 100%;
+}
+```    
 
 >Filling links with color
 
-    &__link {
-        &:link,
-        &:visited {
+```css
+&__link {
+&:link,
+&:visited {
+display: inline-block;
+font-size: 3rem;
+font-weight: 300;
+padding: 1rem 2rem;
+color: $color-white;
+text-decoration: none;
+text-transform: uppercase;
+background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+background-size: 220%;
+transition: all .4s;
+
+    span {
+        margin-right: 1.5rem;
         display: inline-block;
-        font-size: 3rem;
-        font-weight: 300;
-        padding: 1rem 2rem;
-        color: $color-white;
-        text-decoration: none;
-        text-transform: uppercase;
-        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-        background-size: 220%;
-        transition: all .4s;
-
-              span {
-                  margin-right: 1.5rem;
-                  display: inline-block;
-              }
-          }
-
-        &:hover,
-        &:active {
-            background-position: 100%;
-            color: $color-primary;
-            transform: translateX(1rem);
-        }
     }
+}
+
+    &:hover,
+    &:active {
+    background-position: 100%;
+    color: $color-primary;
+    transform: translateX(1rem);
+    }
+}
+```    
 <br>
 
 2. Showing the back side of the cards. Opening and closing popup(when URL was changed).
@@ -183,13 +195,15 @@
 
 >Perspetive property + created blocks for front and back side
 
+```css
     &:hover &__side--front {
-        transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
     }
 
     &:hover &__side--back {
-        transform: rotateY(0);
+    transform: rotateY(0);
     }
+```
 
    
 3. Effect was achieved by properties(position: absolute, outline and z-index)
@@ -204,17 +218,21 @@
 
 ![](README.assets/form-features.gif)
 
+```css
     &__input:placeholder-shown + &__label {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-4rem);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
     }
+```
 
 >Initial HTML-buttons - display:none. They were changed on new buttons and was implementing turning effect:
 
+```css
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
         opacity: 1;
     }
+```
 
 
 ## 🚀Quick Setup
